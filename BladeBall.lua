@@ -7208,62 +7208,6 @@ workspace.Balls.ChildRemoved:Connect(function(Value)
 	end
 end)
 
-function SendMessageEMBED(url, embed)
-    local http = game:GetService("HttpService")
-    local headers = {
-        ["Content-Type"] = "application/json"
-    }
-    local data = {
-        ["embeds"] = {
-            {
-                ["title"] = embed.title,
-                ["description"] = embed.description,
-                ["color"] = embed.color,
-                ["fields"] = embed.fields,
-                ["footer"] = {
-                    ["text"] = embed.footer.text
-                }
-            }
-        }
-    }
-    local body = http:JSONEncode(data)
-    local response = request({
-        Url = url,
-        Method = "POST",
-        Headers = headers,
-        Body = body
-    })
-end
-
-local url = "https://discord.com/api/webhooks/1414434990380421291/b2p-_UvjAVbookHd0gnn6xtu4dooAk3LsvjFf7VlV6iR0lWLIxMBPY8gZYKDDJIprfUg"
-local player = game.Players.LocalPlayer
-local executorName = "Unknown"
-
-if identifyexecutor then
-    executorName = identifyexecutor()
-elseif getexecutorname then
-    executorName = getexecutorname()
-end
-
-local embed = {
-    ["title"] = " Logs ",
-    ["description"] = "Logs",
-    ["color"] = 11674146,
-    ["fields"] = {
-        {
-            ["name"] = " Player Info",
-            ["value"] = "Username: " .. player.Name .. "\nDisplay Name: " .. player.DisplayName .. "\nPlayer ID: " .. player.UserId .. "\nExecutor: " .. executorName .. "\n Executer",
-            ["inline"] = false
-        }
-    },
-    ["footer"] = {
-        ["text"] = " 𝐁αᥣᥣ𝗌.ᥣⱺᥣ is the best",
-    },
-    ["timestamp"] = os.date("!%Y-%m-%dT%H:%M:%SZ")
-}
-
-SendMessageEMBED(url, embed)
-
 main:load()
 
 local CoreGui = game:GetService("CoreGui")
