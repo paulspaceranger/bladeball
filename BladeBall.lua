@@ -5974,18 +5974,6 @@ Title.TextColor3 = Color3.fromRGB(255, 255, 255)
 Title.TextScaled = true
 Title.TextWrapped = true
 
-local Promotion = Instance.new("TextLabel")
-Promotion.Name = "Promotion"
-Promotion.Parent = Immortality
-Promotion.BackgroundTransparency = 1
-Promotion.Position = UDim2.new(0, 0, -0.325, 0)
-Promotion.Size = UDim2.new(0, 139, 0, 29)
-Promotion.Font = Enum.Font.SourceSans
-Promotion.Text = "https://discord.gg/8hjETGDnVE"
-Promotion.TextColor3 = Color3.fromRGB(0, 0, 0)
-Promotion.TextScaled = true
-Promotion.TextWrapped = true
-
 local Activation = Instance.new("TextButton")
 Activation.Name = "Activation"
 Activation.Parent = Immortality
